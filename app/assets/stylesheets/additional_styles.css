@@ -1,0 +1,160 @@
+/* Additional styles */
+
+body {
+  font-family: "Open Sans";
+  background-color: #39CCCC;
+  color: #4d4d4d;
+}
+
+/* My standard vertical spacing classes */
+
+.padding-inside-top-xs {
+  padding-top: 10px;
+}
+
+.padding-inside-top-sm {
+  padding-top: 20px;
+}
+
+.padding-inside-top-md {
+  padding-top: 50px;
+}
+
+.padding-inside-top-lg {
+  padding-top: 150px;
+}
+
+.padding-inside-top-xl {
+  padding-top: 200px;
+}
+
+.padding-inside-bottom-xs {
+  padding-bottom: 10px;
+}
+
+.padding-inside-bottom-sm {
+  padding-bottom: 20px;
+}
+
+.padding-inside-bottom-md {
+  padding-bottom: 50px;
+}
+
+.padding-inside-bottom-lg {
+  padding-bottom: 150px;
+}
+
+.padding-inside-bottom-xl {
+  padding-bottom: 200px;
+}
+
+.margin-above-top-xs {
+  margin-top: 10px;
+}
+
+.margin-above-top-sm {
+  margin-top: 20px;
+}
+
+.margin-above-top-md {
+  margin-top: 50px;
+}
+
+.margin-above-top-lg {
+  margin-top: 150px;
+}
+
+.margin-below-bottom-xs {
+  margin-bottom: 10px;
+}
+
+.margin-below-bottom-sm {
+  margin-bottom: 20px;
+}
+
+.margin-below-bottom-md {
+  margin-bottom: 50px;
+}
+
+.margin-below-bottom-lg {
+  margin-bottom: 150px;
+}
+
+.margin-below-bottom-xl {
+  margin-bottom: 200px;
+}
+
+h1, .result, h3 {
+  text-align: center;
+}
+
+.output {
+  text-align: center;
+}
+
+.img {
+  font-size: 250px;
+  padding-top: 30px;
+}
+
+ellipse {
+  fill: #258e8e;
+}
+
+.you {
+  margin-right: 0px;
+}
+
+.comp {
+  margin-left: 0px;
+}
+
+.off {
+  border: #FFDE9C solid;
+  background-color: #FFCF6D;
+  color: #996600;
+}
+
+.off:hover {
+  border: #FFDE9C solid;
+  background-color: #FFC247;
+  color: #4D3300;
+}
+
+.on {
+  background-color: #FFC247;
+  border: #FFDE9C solid;
+  color: #4D3300;
+}
+
+.on:hover {
+  border: #FFDE9C solid;
+  background-color: #FFB521;
+  color: #1A1100;
+}
+
+
+hr {
+  border-color: #90EBEB;
+}
+
+.scorebox1 {
+   border: #FF9C9C solid;
+   border-top-left-radius: 30px;
+   border-top-right-radius: 30px;
+   background-color: #FF9C9C;
+   color: white;
+}
+
+.scorebox2 {
+  border: #FF6D6D  solid;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  background-color: #FF6D6D;
+}
+
+.score {
+  font-weight: bold;
+  font-size: 75px;
+  color: white;
+}
