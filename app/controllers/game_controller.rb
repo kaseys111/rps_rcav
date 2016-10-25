@@ -7,68 +7,45 @@ class GameController < ApplicationController #inherits
   # So in view template, can put @
   # Helpful to put most logic in pure ruby file and put mostly what's put onto the page on the view template (play_rock.html.erb)
 
-  def user_plays_rock
+  def dynamic
 
     moves = ["rock", "paper", "scissors"]
+
+    @user_move = params["move"]
 
     @computer_move = moves.sample
 
     @img = "fa fa-hand-" + @computer_move + "-o"
 
-    if @computer_move == "scissors"
-      @cx = 130
-    elsif @computer_move == "rock"
-      @cx = 117
+    if @user_move == "rock"
+      @cx_static = 117
+    elsif @user_move == "paper"
+      @cx_static = 110
     else
-      @cx = 110
+      @cx_static = 130
     end
-
-    render("game/play_rock.html.erb")
-  end
-
-
-  def user_plays_paper
-
-    moves = ["rock", "paper", "scissors"]
-
-    @computer_move = moves.sample
-
-    @img = "fa fa-hand-" + @computer_move + "-o"
 
     if @computer_move == "scissors"
       @cx = 130
+      @outcome = "won"
     elsif @computer_move == "rock"
       @cx = 117
+      @outcome = "tied"
     else
       @cx = 110
+      @outcome = "lost"
     end
 
-
-    render("game/play_paper.html.erb")
-  end
-
-
-  def user_plays_scissors
-
-    moves = ["rock", "paper", "scissors"]
-
-    @computer_move = moves.sample
-
-    @img = "fa fa-hand-" + @computer_move + "-o"
-
-    if @computer_move == "scissors"
-      @cx = 130
-    elsif @computer_move == "rock"
-      @cx = 117
+    if @user_move == @computer_move
+      @outcome = "tied"
+    elsif (@user_move == 'paper' && @computer_move == 'rock') || (@user_move == 'rock' && @computer_move == 'scissors') || (@user_move == 'scissors' &&     @computer_move == 'paper')
+      @outcome = "win"
     else
-      @cx = 110
+      @outcome = "lose"
     end
 
-
-    render("game/play_scissors.html.erb")
+    render("game/play_anything.html.erb")
   end
-
-
 end
 
 
