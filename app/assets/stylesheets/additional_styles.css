@@ -139,6 +139,22 @@ ellipse {
   color: #1A1100;
 }
 
+.reset {
+  border: none;
+  margin-left: 15px;
+  margin-top: 27px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #FF6D6D;
+  color: white;
+  font-size: 20px;
+}
+
+.reset:hover {
+  background-color: #FF4747;
+  color: white;
+}
+
 
 hr {
   border-color: #90EBEB;

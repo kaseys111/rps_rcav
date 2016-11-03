@@ -1,22 +1,25 @@
 
 class GameController < ApplicationController #inherits
 
-  # could also put ruby in here (pure ruby w/o <% %>)
-  # but then, in html.erb file, will be calling computer_move, but that    doesn't exist in the file
-  # When you put @ in front of it, it can be accessed in different places
-  # So in view template, can put @
-  # Helpful to put most logic in pure ruby file and put mostly what's put onto the page on the view template (play_rock.html.erb)
+  def index
+    Score.delete_all
+    @score = Score.new
+    @score.comp = 0
+    @score.user = 0
+    @score.save
+
+  end
 
   def dynamic
+    @score = Score.last
 
     moves = ["rock", "paper", "scissors"]
-
     @user_move = params["move"]
-
     @computer_move = moves.sample
 
     @img = "fa fa-hand-" + @computer_move + "-o"
 
+    # shadow justification
     if @user_move == "rock"
       @cx_static = 117
     elsif @user_move == "paper"
@@ -36,15 +39,23 @@ class GameController < ApplicationController #inherits
       @outcome = "lost"
     end
 
+
+    # score outcome
     if @user_move == @computer_move
       @outcome = "tied"
+
     elsif (@user_move == 'paper' && @computer_move == 'rock') || (@user_move == 'rock' && @computer_move == 'scissors') || (@user_move == 'scissors' &&     @computer_move == 'paper')
       @outcome = "win"
+      @score.user+=1
+      @score.save
+
     else
       @outcome = "lose"
+      @score.comp+=1
+      @score.save
     end
 
-    render("game/play_anything.html.erb")
+    render("play_anything")
   end
 end
 

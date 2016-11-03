@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root "game#play_anything"
+  get("/", { :controller => "game", :action => "index"})
 
   get("/dynamic/:move", { :controller => "game", :action => "dynamic"})
 
